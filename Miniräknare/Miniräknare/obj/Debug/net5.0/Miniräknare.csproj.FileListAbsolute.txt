@@ -1,0 +1,16 @@
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\Miniräknare.exe
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\Miniräknare.deps.json
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\Miniräknare.runtimeconfig.json
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\Miniräknare.runtimeconfig.dev.json
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\Miniräknare.dll
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\ref\Miniräknare.dll
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\bin\Debug\net5.0\Miniräknare.pdb
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.GeneratedMSBuildEditorConfig.editorconfig
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.AssemblyInfoInputs.cache
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.AssemblyInfo.cs
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.csproj.CoreCompileInputs.cache
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.dll
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\ref\Miniräknare.dll
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.pdb
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.genruntimeconfig.cache
+C:\Skola\Programmering Grund\Projekt\Miniräknare\Miniräknare\Miniräknare\obj\Debug\net5.0\Miniräknare.csproj.AssemblyReference.cache

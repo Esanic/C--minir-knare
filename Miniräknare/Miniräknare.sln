@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miniräknare", "Miniräknare\Miniräknare.csproj", "{CF19CEC8-9619-47B2-B8C4-FA3E15E03BEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF19CEC8-9619-47B2-B8C4-FA3E15E03BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF19CEC8-9619-47B2-B8C4-FA3E15E03BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF19CEC8-9619-47B2-B8C4-FA3E15E03BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF19CEC8-9619-47B2-B8C4-FA3E15E03BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AA8690A-8B82-4EBB-BC8D-21B04CDA2E37}
+	EndGlobalSection
+EndGlobal
