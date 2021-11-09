@@ -14,7 +14,7 @@ namespace Miniräknare
         //Ett exempel är på rad 73 och 75 som tidigare tog på +30 rader tillsammans.
         //Inser nu i efterhand att jag borde upprättat Git för att kunna påvisa hur koden utvecklat sig. Man lär sig av sina misstag ¯\_(ツ)_/¯
         //Men i det stora hela har jag lärt mig mycket nya saker. Alltifrån funktioner, for-loopar, TryParse, string.Join, rätt användande av && och ||, \n, ! innan ett påstående för att vända på innebörden av påståendet.
-
+        //hej
         
         //Funktion som utför uträkningarna baserat på vilken operator och antalet tal som användaren har angivit.
         //Använder if-satser då man enkelt kan få de resultat man önskar.
