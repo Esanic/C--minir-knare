@@ -1,97 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Miniräknare
 {
     class Program
-    {   
+    {
+
         //Inledning:
         //Från början hade jag skrivit ut all kod och inte använt några funktioner överhuvudtaget.
         //Ju längre jag satt med projektet desto mer lärde jag mig och kunde börja använda funktioner, vilket jag aldrig använt innan i C#.
+        //Jag har även flyttat dessa funktioner till en klass som kallas när det behövs.
         //Jag är övertygad om att det finns rum för förbättringar men jag tror mig ha kortat ner koden i "Main" till sitt minimum nu utan att överanvända funktioner.
         //Jag vet inte exakt vad som skulle kunna förbättras härifrån då jag successivt har förbättrat och förenklat koden under projektets gång. 
-        //Ett exempel är på rad 73 och 75 som tidigare tog på +30 rader tillsammans.
-        //Det skulle vara om man använder sig utav klasser men dit har tyvärr inte kommit ännu.
-        //Inser nu i efterhand att jag borde upprättat Git för att kunna påvisa hur koden utvecklat sig. Man lär sig av sina misstag ¯\_(ツ)_/¯
+        //Ett exempel är på rad 67 och 69 i Functions.cs som tidigare tog på +30 rader tillsammans.
+        //Inser nu i efterhand att jag borde upprättat Git från början för att kunna påvisa hur koden utvecklat sig. Man lär sig av sina misstag ¯\_(ツ)_/¯
         //Men i det stora hela har jag lärt mig mycket nya saker. Alltifrån funktioner, for-loopar, TryParse, string.Join, rätt användande av && och ||, \n, ! innan ett påstående för att vända på innebörden av påståendet.
-
-        //Funktion som tar resultatet från funktionen Calculate i klassen Calculation
-        //Skriver ut beräkningen för användaren genom string.Join som skriver ut en lista och separerar den med vad man anger.
-        //Sparar användarens uträkning i en lista genom string.Join.
-        //Rensar listan för att inte eventuella framtida beräkningar ska behålla gamla värden.
-        //Detta var den mest förenklade lösningen jag kom fram till. Från att ha en if-lista så lärde jag mig att förenkla det till detta.
-
-        //static void Summary(string op, int amountNumbers, List<string> memory, List<double> userNumbers)
-        //{
-        //    double calculation = Calculation.Calculate(op, amountNumbers, userNumbers);
-            
-        //    Console.WriteLine($"{string.Join($" {op} ", userNumbers)} = {calculation}");
-
-        //    memory.Add($"{string.Join($" {op} ", userNumbers)} = {calculation}");
-        //    userNumbers.Clear();
-
-        //}
-
-        //Funktion som kontrollerar om användaren anger 0 vid division. Användaren blir då ifrågasatt ifall hen är galen och uppmanad till att ange en ny siffra till dess att den inte längre är 0.
-        //Om användaren anger något annat än tal blir användaren uppmanad att ange ett tal tills dess att användaren anger ett tal.
-        //Returnerar värdet av inputNum
-        //Använder TryParse för att inte användaren ska kunna ange något annat än ett tal med decimaler.
-        //static double DivideZero(double inputNum)
-        //{
-        //    while (inputNum == 0)
-        //    {
-        //        Console.WriteLine("ÄR DU GALEN?! DU KAN INTE DIVIDERA MED NOLL!");
-        //        Console.WriteLine("Ange ett nytt tal som inte är noll:");
-        //        string input = Console.ReadLine();
-        //        while (!double.TryParse(input, out inputNum))
-        //        {
-        //            Console.WriteLine("Du angav inte ett tal. Försök igen");
-        //            input = Console.ReadLine();
-        //        }
-        //    }
-        //    return inputNum;
-        //}
-
-        //Funktion där användaren blir tillfrågad om vilket tal hen ska ange.
-        //Om användaren anger något annat än tal blir användaren uppmanad att ange ett tal tills dess att användaren anger ett tal.
-        //Om användaren har angett division som operator och anger 0 som tal så går den in i funktionen DivideZero
-        //Returnerar värdet av num
-        //Använder TryParse för att inte användaren ska kunna ange något annat än ett tal med decimaler.
-        //static double AssignNum(string quantity, string op)
-        //    {
-        //        Console.WriteLine("Ange ditt " + quantity + " tal: ");
-        //        string input = Console.ReadLine();
-        //        double num;
-        //        while (!double.TryParse(input, out num))
-        //        {
-        //            Console.WriteLine("Du angav inte ett tal. Försök igen\nAnge ditt " + quantity + " tal: ");
-        //            input = Console.ReadLine();
-        //        }
-        //        if (op == "/" && num==0)
-        //        {
-        //        num = DivideZero(num);
-        //        }
-        //    return num;
-        //    }
 
         static void Main(string[] args)
         {
             string loop = "ja";
             string Operator = string.Empty;
+            
+            List<string> memory = new();
+            List<double> userNumber = new();
+            //Hämtar räkneorden ifrån .txt dokumentet countWords och lägger i listan countWord
+            var logFile = File.ReadAllLines("../../../countWords.txt");
+            List<string> countWord = new(logFile);
+            
             int amountNumbersLowest = 2;
-            int amountNumbersHighest = 5;
-            List<string> memory = new List<string>();
-            List<double> userNumber = new List<double>();            
-            List<string> countWord = new List<string>()
-            {
-                "första",
-                "andra",
-                "tredje",
-                "fjärde",
-                "femte",
-            };
-
+            int amountNumbersHighest = countWord.Count;
+ 
             Console.WriteLine("Välkommen till miniräknaren!");
             
             //Loopar miniräknaren så länge användaren anger "ja" eller "j" på frågan om det ska göras fler uträkningar
@@ -99,7 +39,6 @@ namespace Miniräknare
             {
                 //Återställer operatorChoice så att koden kan fråga användaren om vilken operator som ska användas.
                 string operatorChoice = string.Empty;
-
                 //Så länge inte användaren har gjort några tidigare uträkningar kommer inte "Dina tidigare uträkningar" att skrivas.
                 if (memory.Count != 0)
                 {
@@ -148,7 +87,7 @@ namespace Miniräknare
                 }
 
                 //Användaren får ange hur många tal den önskar att miniräknaren ska använda vid uträkningen.
-                Console.WriteLine("Hur många tal önskar du använda? Välj mellan 2 och 5");
+                Console.WriteLine($"Hur många tal önskar du använda? Välj mellan {amountNumbersLowest} och {amountNumbersHighest}");
                 string inputAmount = Console.ReadLine();
                 int amountNumbers;
 

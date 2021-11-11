@@ -55,6 +55,11 @@ namespace Miniräknare
             }
         }
 
+        //Funktion som tar resultatet från funktionen Calculate i klassen Calculation
+        //Skriver ut beräkningen för användaren genom string.Join som skriver ut en lista och separerar den med vad man anger.
+        //Sparar användarens uträkning i en lista genom string.Join.
+        //Rensar listan för att inte eventuella framtida beräkningar ska behålla gamla värden.
+        //Detta var den mest förenklade lösningen jag kom fram till. Från att ha en if-lista så lärde jag mig att förenkla det till detta med hjälp av string.Join.
         public static void Summary(string op, int amountNumbers, List<string> memory, List<double> userNumbers)
         {
             double calculation = Calculate(op, amountNumbers, userNumbers);
@@ -65,7 +70,10 @@ namespace Miniräknare
             userNumbers.Clear();
 
         }
-
+        //Funktion som kontrollerar om användaren anger 0 vid division. Användaren blir då ifrågasatt ifall hen är galen och uppmanad till att ange en ny siffra till dess att den inte längre är 0.
+        //Om användaren anger något annat än tal blir användaren uppmanad att ange ett tal tills dess att användaren anger ett tal.
+        //Returnerar värdet av inputNum
+        //Använder TryParse för att inte användaren ska kunna ange något annat än ett tal med decimaler.
         public static double DivideZero(double inputNum)
         {
             while (inputNum == 0)
@@ -82,6 +90,11 @@ namespace Miniräknare
             return inputNum;
         }
 
+        //Funktion där användaren blir tillfrågad om vilket tal hen ska ange.
+        //Om användaren anger något annat än tal blir användaren uppmanad att ange ett tal tills dess att användaren anger ett tal.
+        //Om användaren har angett division som operator och anger 0 som tal så går den in i funktionen DivideZero
+        //Returnerar värdet av num
+        //Använder TryParse för att inte användaren ska kunna ange något annat än ett tal med decimaler.
         public static double AssignNum(string quantity, string op)
         {
             Console.WriteLine("Ange ditt " + quantity + " tal: ");
